@@ -14,7 +14,8 @@ mongoose.connect(
         console.log(err);
     })
 
-app.use('/api/user', userRoute);
+app.use(express.json());
+app.use('/api/users', userRoute);
 
 
 app.listen(5000, () => {
