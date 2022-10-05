@@ -5,6 +5,9 @@ const dotenv = require('dotenv')
 const userRoute = require('./routes/user')
 const authRoute = require('./routes/auth')
 const productRoute = require('./routes/product')
+const orderRoute = require('./routes/order')
+const cartRoute = require('./routes/cart')
+
 
 
 dotenv.config();
@@ -21,6 +24,9 @@ app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
+app.use('/api/orders', orderRoute);
+app.use('/api/carts', cartRoute);
+
 
 
 app.listen(5000, () => {
