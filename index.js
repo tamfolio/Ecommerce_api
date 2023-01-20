@@ -14,7 +14,10 @@ const cors = require('cors');
 dotenv.config();
 
 mongoose.connect(
-        process.env.MONGO_URL
+        process.env.MONGO_URL,
+        {useUnifiedTopology:true,
+        useNewUrlParser: true,
+        useCreateIndex: true}
     )
     .then(() => console.log('DB Connection Succesful!'))
     .catch((err) => {
