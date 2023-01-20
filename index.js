@@ -7,6 +7,7 @@ const authRoute = require('./routes/auth')
 const productRoute = require('./routes/product')
 const orderRoute = require('./routes/order')
 const cartRoute = require('./routes/cart')
+const cors = require('cors');
 
 
 
@@ -21,6 +22,7 @@ mongoose.connect(
     })
 
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
