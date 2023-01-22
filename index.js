@@ -13,11 +13,13 @@ const cors = require('cors');
 
 dotenv.config();
 
+const mongo = process.env.MONGO_URL;
+
 mongoose.connect(
-        process.env.MONGO_URL,
-        {useUnifiedTopology:true,
-        useNewUrlParser: true,
-        useCreateIndex: true}
+        "mongodb+srv://tamilore:ayobami20@ecommerce.dcz858w.mongodb.net/shoppla",
+        {useNewUrlParser: true,
+        useUnifiedTopology:true
+    }
     )
     .then(() => console.log('DB Connection Succesful!'))
     .catch((err) => {
